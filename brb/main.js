@@ -20,12 +20,12 @@ function input() {
 
     let params = '';
 
+    if (!form.elements.namedItem("enable-7tv").checked)
+        params += "&no-7tv";
     if (!form.elements.namedItem("enable-ffz").checked)
         params += "&no-ffz";
     if (!form.elements.namedItem("enable-bttv").checked)
         params += "&no-bttv";
-    if (!form.elements.namedItem("enable-7tv").checked)
-        params += "&no-7tv";
     if (!form.elements.namedItem("enable-pronouns").checked)
         params += "&no-pronouns";
 

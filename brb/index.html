@@ -21,7 +21,7 @@
 
 <form name="brb">
     <label for="channel-name">Channel:</label>
-    <input type="text" id="channel-name" name="channel-name" required minlength="3" placeholder="username"/>
+    <input type="text" id="channel-name" name="channel-name" required placeholder="username"/>
 
     <p>
         <input type="checkbox" id="enable-7tv" checked/>
@@ -39,7 +39,7 @@
 
     <p>
         <input name="copy" type="submit" value="Copy to clipboard"/>
-        <output name="url"></output>
+        <output id="copy-url" name="url"></output>
     </p>
 </form>
 </body>
