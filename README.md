@@ -1,1 +1,1 @@
-# leastsussyimposter.github.io
+# [lsi.lol](https://lsi.lol)
