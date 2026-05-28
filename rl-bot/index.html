@@ -4,8 +4,189 @@
     <meta charset="UTF-8">
     <title>Rocket League Stats Bot</title>
     <link rel="stylesheet" href="../main.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<p>Work in progress! Help details soon.</p>
+<h1>Rocket League Stats Bot</h1>
+<p>Inspired by Minecraft PaceMan sessions bots, <a href="https://twitch.tv/RL_StatsBot" target="_blank"
+                                                   rel="noopener noreferrer">RL_StatsBot</a> allows you to follow your
+    session, rank and other cool stuff for Rocket League!
+</p>
+<p>
+    Currently, the bot is in private beta. You can use it in participating channels, link your account, but your
+    sessions won't be accurate.<br/>
+    When the bot becomes public, you will be free to add it to your Twitch channel!
+</p>
+<p>
+    Sessions are <strong>only</strong> tracked when you are live and playing Rocket League, or turned on offline mode.
+    More on that below.
+</p>
+<p>
+    Made with ❤️ by <b><a href="https://twitch.tv/LeastSussyImposter" target="_blank" rel="noopener noreferrer">LeastSussyImposter</a></b>
+</p>
+<h2>Commands</h2>
+<p>The default command prefix is <code>*</code>. Each chatroom will be able to change their prefix soon™.</p>
+<h3>Rocket League</h3>
+<table>
+    <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Examples</th>
+    </tr>
+    <tr>
+        <td><code>*link</code></td>
+        <td>
+            Link your Rocket League account to the bot.<br/>
+            You can only link one account at a time.<br/><br/>
+            Optional parameter:<br/>
+            <code>--platform or -p &lt;epic|steam|psn|xbl|switch&gt;</code> (defaults to epic)<br/><br/>
+            <i>Steam requires the numeric ID. But might as well link you Epic account that Rocket League uses, even if
+                you play from Steam.</i>
+        </td>
+        <td>
+            <code>*link MyEpicUsername</code><br/><br/>
+
+            These two do the same thing:<br/>
+            <code>*link --platfrom psn PlayStationUsername</code><br/>
+            <code>*link -p psn PlayStationUsername</code><br/><br/>
+
+            <code>*link -p xbl XBoxAccountName</code><br/>
+            <code>*link -p steam 123456789</code><br/>
+            <code>*link -p switch SwitchPlayerWow</code><br/>
+        </td>
+    </tr>
+    <tr>
+        <td><code>*unlink</code></td>
+        <td>
+            Unlink your account from the bot<br/><br/>
+            <i>If you want to link to another account, you can use the <code>*link</code> command directly, and it will
+                override your previous association.</i>
+        </td>
+        <td><code>*unlink</code></td>
+    </tr>
+    <tr>
+        <td><code>*session<br/>!session</code></td>
+        <td>
+            Get current session information.<br/><br/>
+
+            Without parameters:<br/>
+            <ul>
+                <li>
+                    <code>*session</code> defaults to yourself if you linked your account, otherwise the current
+                    streamer.
+                </li>
+                <li>
+                    <code>!session</code> defaults to the streamer, or yourself if the streamer has not linked their
+                    account.
+                </li>
+            </ul>
+            <i>Note: <code>!session</code> is only active when the stream category is set to Rocket League.</i>
+            <br/><br/>
+            Optional parameters:<br/>
+            <ul>
+                <li>
+                    <code>--platform or -p &lt;epic|steam|psn|xbl|switch&gt;</code> (defaults to epic), works the same
+                    as the <code>*link</code> command.
+                </li>
+                <li><code>username</code> or <code>@username</code>.<br/></li>
+            </ul>
+            When using <code>username</code>, you look up the session of the given username on the optionally given
+            <code>--platform</code>.<br/>
+            When using <code>@username</code>, you look up the session of the mentioned Twitch user, if they have an
+            account linked. <code>--platform</code> is ignored.
+        </td>
+        <td>
+            <code>!session</code><br/>
+            <code>*session</code><br/>
+            <code>*session EpicUsername</code><br/>
+            <code>*session -p xbl XBoxAccount</code><br/>
+            <code>*session @TwitchUsername</code><br/>
+        </td>
+    </tr>
+    <tr>
+        <td><code>*rank<br/>!rank</code></td>
+        <td>
+            Get a user's ranks.<br/><br/>
+
+            Optional parameters:<br/>
+            <ul>
+                <li>
+                    <code>--platform or -p &lt;epic|steam|psn|xbl|switch&gt;</code> (defaults to epic), works the same
+                    as the <code>*link</code> command.
+                </li>
+                <li><code>username</code> or <code>@username</code>.<br/></li>
+            </ul>
+            Works the same as the <code>*session</code> command, but returns rank info instead.
+        </td>
+        <td>
+            <code>!rank</code><br/>
+            <code>*rank</code><br/>
+            <code>*rank EpicUsername</code><br/>
+            <code>*rank -p xbl XBoxAccount</code><br/>
+            <code>*rank @TwitchUsername</code><br/>
+        </td>
+    </tr>
+    <tr>
+        <td><code>*start-session<br/>*stop-session</code></td>
+        <td>
+            Starts or stops an offline session.<br/><br/>
+            If you are live and on the Rocket League category, you do not need these commands.<br/><br/>
+            <i>Only available to the channel's broadcaster while in private beta.</i>
+        </td>
+        <td><code>*start-session<br/>*stop-session</code></td>
+    </tr>
+</table>
+
+<h3>Other commands</h3>
+<table>
+    <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Examples</th>
+    </tr>
+    <tr>
+        <td><code>*ping</code></td>
+        <td>Pings the bot.</td>
+        <td><code>*ping</code></td>
+    </tr>
+    <tr>
+        <td><code>*prefix</code></td>
+        <td>
+            ⚠️ Not implemented yet! ⚠️<br/><br/>
+            Change the command prefix of the bot for this channel.<br/><br/>
+            <i>Only available to the broadcaster and their moderators.</i>
+        </td>
+        <td>Soon!</td>
+    </tr>
+    <tr>
+        <td><code>*join<br/>*part</code></td>
+        <td>Join or leave a channel.<br/><br/><i>Only available to the bot owner while in private beta.</i></td>
+        <td>Soon!</td>
+    </tr>
+</table>
+<p>
+    More coming soon™!
+</p>
+<h2>Planned features</h2>
+<form>
+    <input type="checkbox" disabled><label>Custom prefix per channel</label><br/>
+    <input type="checkbox" disabled><label>Let streamers choose what playlists show up on sessions and rank
+    commands</label><br/>
+    <input type="checkbox" disabled><label>Optional emote support for a better output of ranks/sessions</label><br/>
+    <input type="checkbox" disabled><label>Miscellaneous improvements</label><br/>
+</form>
+<p>
+    Something I haven't thought of that you would like to see? Let me know in chat at
+    <b><a href="https://twitch.tv/LeastSussyImposter" target="_blank"
+          rel="noopener noreferrer">LeastSussyImposter</a></b> or just send me a DM!
+</p>
+
+<br/>
+<hr/>
+
+<footer>
+    <p><a href="../">Main page</a></p>
+    <p><a href="https://github.com/LeastSussyImposter/lsi.lol">Website source code</a></p>
+</footer>
 </body>
 </html>

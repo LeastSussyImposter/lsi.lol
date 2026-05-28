@@ -4,10 +4,18 @@ body {
     background-color: #363537;
     color: white;
     padding: 0.25em;
+
+    font-family: Arial, sans-serif;
 }
 
 a {
     color: #ffca00;
+}
+
+h1, h2, h3, code {
+    font-weight: bolder;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
 }
 
 #copy-url a {
