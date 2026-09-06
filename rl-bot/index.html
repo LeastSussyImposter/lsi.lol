@@ -13,19 +13,14 @@
     session, rank and other cool stuff for Rocket League!
 </p>
 <p>
-    Currently, the bot is in private beta. You can use it in participating channels, link your account, but your
-    sessions won't be accurate.<br/>
+    Currently, the bot is in private beta. You can use it in participating channels, link your account.<br/>
     When the bot becomes public, you will be free to add it to your Twitch channel!
-</p>
-<p>
-    Sessions are <strong>only</strong> tracked when you are live and playing Rocket League, or turned on offline mode.
-    More on that below.
 </p>
 <p>
     Made with ❤️ by <b><a href="https://twitch.tv/LeastSussyImposter" target="_blank" rel="noopener noreferrer">LeastSussyImposter</a></b>
 </p>
 <h2>Commands</h2>
-<p>The default command prefix is <code>*</code>. Each chatroom will be able to change their prefix soon™.</p>
+<p>The default command prefix is <code>-</code>. Each chatroom will be able to change their prefix soon™.</p>
 <h3>Rocket League</h3>
 <table>
     <tr>
@@ -34,45 +29,38 @@
         <th>Examples</th>
     </tr>
     <tr>
-        <td><code>*link</code></td>
+        <td><code>-link</code></td>
         <td>
             Link your Rocket League account to the bot.<br/>
             You can only link one account at a time.<br/><br/>
             Optional parameter:<br/>
-            <code>--platform or -p &lt;epic|steam|psn|xbl|switch&gt;</code> (defaults to epic)<br/><br/>
+            <code>--platform or -p &lt;epic|steam&gt;</code> (defaults to epic)<br/><br/>
             <i>Steam requires the numeric ID. But might as well link you Epic account that Rocket League uses, even if
                 you play from Steam.</i>
         </td>
         <td>
-            <code>*link MyEpicUsername</code><br/><br/>
-
-            These two do the same thing:<br/>
-            <code>*link --platfrom psn PlayStationUsername</code><br/>
-            <code>*link -p psn PlayStationUsername</code><br/><br/>
-
-            <code>*link -p xbl XBoxAccountName</code><br/>
-            <code>*link -p steam 123456789</code><br/>
-            <code>*link -p switch SwitchPlayerWow</code><br/>
+            <code>-link MyEpicUsername</code><br/>
+            <code>-link -p steam 123456789</code>
         </td>
     </tr>
     <tr>
-        <td><code>*unlink</code></td>
+        <td><code>-unlink</code></td>
         <td>
             Unlink your account from the bot<br/><br/>
-            <i>If you want to link to another account, you can use the <code>*link</code> command directly, and it will
+            <i>If you want to link to another account, you can use the <code>-link</code> command directly, and it will
                 override your previous association.</i>
         </td>
-        <td><code>*unlink</code></td>
+        <td><code>-unlink</code></td>
     </tr>
     <tr>
-        <td><code>*session<br/>!session</code></td>
+        <td><code>-session<br/>!session</code></td>
         <td>
             Get current session information.<br/><br/>
 
             Without parameters:<br/>
             <ul>
                 <li>
-                    <code>*session</code> defaults to yourself if you linked your account, otherwise the current
+                    <code>-session</code> defaults to yourself if you linked your account, otherwise the current
                     streamer.
                 </li>
                 <li>
@@ -85,8 +73,8 @@
             Optional parameters:<br/>
             <ul>
                 <li>
-                    <code>--platform or -p &lt;epic|steam|psn|xbl|switch&gt;</code> (defaults to epic), works the same
-                    as the <code>*link</code> command.
+                    <code>--platform or -p &lt;epic|steam&gt;</code> (defaults to epic), works the same
+                    as the <code>-link</code> command.
                 </li>
                 <li><code>username</code> or <code>@username</code>.<br/></li>
             </ul>
@@ -97,46 +85,35 @@
         </td>
         <td>
             <code>!session</code><br/>
-            <code>*session</code><br/>
-            <code>*session EpicUsername</code><br/>
-            <code>*session -p xbl XBoxAccount</code><br/>
-            <code>*session @TwitchUsername</code><br/>
+            <code>-session</code><br/>
+            <code>-session EpicUsername</code><br/>
+            <code>-session @TwitchUsername</code>
         </td>
     </tr>
     <tr>
-        <td><code>*rank<br/>!rank</code></td>
+        <td><code>-rank<br/>!rank</code></td>
         <td>
             Get a user's ranks.<br/><br/>
 
             Optional parameters:<br/>
             <ul>
                 <li>
-                    <code>--platform or -p &lt;epic|steam|psn|xbl|switch&gt;</code> (defaults to epic), works the same
-                    as the <code>*link</code> command.
+                    <code>--platform or -p &lt;epic|steam&gt;</code> (defaults to epic), works the same
+                    as the <code>-link</code> command.
                 </li>
                 <li><code>username</code> or <code>@username</code>.<br/></li>
             </ul>
-            Works the same as the <code>*session</code> command, but returns rank info instead.
+            Works the same as the <code>-session</code> command, but returns rank info instead.
         </td>
         <td>
             <code>!rank</code><br/>
-            <code>*rank</code><br/>
-            <code>*rank EpicUsername</code><br/>
-            <code>*rank -p xbl XBoxAccount</code><br/>
-            <code>*rank @TwitchUsername</code><br/>
+            <code>-rank</code><br/>
+            <code>-rank EpicUsername</code><br/>
+            <code>-rank @TwitchUsername</code><br/>
         </td>
     </tr>
     <tr>
-        <td><code>*start-session<br/>*stop-session</code></td>
-        <td>
-            Starts or stops an offline session.<br/><br/>
-            If you are live and on the Rocket League category, you do not need these commands.<br/><br/>
-            <i>Only available to whitelisted users while in private beta.</i>
-        </td>
-        <td><code>*start-session<br/>*stop-session</code></td>
-    </tr>
-    <tr>
-        <td><code>*pms</code></td>
+        <td><code>-pms</code></td>
         <td>
             Turn on or off <strong>Post Match Summaries</strong>. (off by default)<br/><br/>
 
@@ -144,7 +121,7 @@
             <i>You need to be live in the Rocket League category or have a manual session turned on.</i>
         </td>
         <td>
-            <code>*pms</code>
+            <code>-pms</code>
         </td>
     </tr>
 </table>
@@ -157,12 +134,12 @@
         <th>Examples</th>
     </tr>
     <tr>
-        <td><code>*ping</code></td>
+        <td><code>-ping</code></td>
         <td>Pings the bot.</td>
-        <td><code>*ping</code></td>
+        <td><code>-ping</code></td>
     </tr>
     <tr>
-        <td><code>*prefix</code></td>
+        <td><code>-prefix</code></td>
         <td>
             ⚠️ Not implemented yet! ⚠️<br/><br/>
             Change the command prefix of the bot for this channel.<br/><br/>
@@ -171,8 +148,12 @@
         <td>Soon!</td>
     </tr>
     <tr>
-        <td><code>*join<br/>*part</code></td>
-        <td>Join or leave a channel.<br/><br/><i>Only available to the bot owner while in private beta.</i></td>
+        <td><code>-join<br/>-part</code></td>
+        <td>Join or leave a channel.<br/><br/><i>Only available to the bot owner while in private beta.</i><br/>
+            If you would like to request access, send a whisper to <b><a href="https://twitch.tv/LeastSussyImposter"
+                                                                         target="_blank"
+                                                                         rel="noopener noreferrer">LeastSussyImposter</a></b>.
+        </td>
         <td>Soon!</td>
     </tr>
 </table>
@@ -182,17 +163,22 @@
 <h2>Planned features</h2>
 <form>
     <input type="checkbox" disabled><label>Custom prefix per channel</label><br/>
-    <input type="checkbox" disabled><label>Let streamers choose what playlists show up on sessions and rank
-    commands</label><br/>
     <input type="checkbox" disabled><label>Optional emote support for a better output of ranks/sessions</label><br/>
     <input type="checkbox" disabled><label>Miscellaneous improvements</label><br/>
 </form>
 <p>
     Something I haven't thought of that you would like to see? Let me know in chat at
     <b><a href="https://twitch.tv/LeastSussyImposter" target="_blank"
-          rel="noopener noreferrer">LeastSussyImposter</a></b> or just send me a DM!
+          rel="noopener noreferrer">LeastSussyImposter</a></b> or just send me a whisper!
 </p>
 
+<h2>Special thanks</h2>
+<p>Thank you <b><a href="https://www.twitch.tv/emjaykae" target="_blank"
+                   rel="noopener noreferrer">EmJayKae</a></b> for the wonderful <b><a href="https://rl.emjaykae.com/"
+                                                                                      target="_blank"
+                                                                                      rel="noopener noreferrer">API</a></b>!
+    :3
+</p>
 <br/>
 <hr/>
 
