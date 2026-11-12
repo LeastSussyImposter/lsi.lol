@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name=application-name content="lsi_bot"/>
+    <meta name=author content="LeastSussyImposter"/>
+    <meta name=description
+          content="Commands and Wheel of Fortune shop help for lsi_bot, LeastSussyImposter's Twitch chat bot."/>
+    <meta name=viewport content="width=device-width"/>
+
+    <link rel="stylesheet" href="../main.css"/>
+    <link rel="stylesheet" href="style.css"/>
+
+    <title>lsi_bot</title>
+</head>
+<body>
+<h1>lsi_bot</h1>
+<p>
+    <strong>lsi_bot</strong> is the chat bot of
+    <b><a href="https://twitch.tv/LeastSussyImposter" target="_blank"
+          rel="noopener noreferrer">LeastSussyImposter</a></b>'s channel, featuring the <strong>Wheel of
+    Fortune</strong>
+    minigame: spin the wheel, open daily packs, earn coins and spend them on jokers in the <a href="#shop">shop</a>!
+</p>
+
+<h2>Commands</h2>
+<p>
+    The command prefix is <code>-</code>.<br/>
+    Commands marked with <code>[@user]</code> default to yourself, or look up the given Twitch user instead.
+</p>
+
+<h3>Wheel of Fortune</h3>
+<table>
+    <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Examples</th>
+    </tr>
+    <tr>
+        <td><code>-wof</code></td>
+        <td>
+            Spin the Wheel of Fortune!<br/><br/>
+            Most spins are nopes, but hits give you coins, and the rarer the hit, the more coins you get, and maybe a
+            few secrets are hiding in there... 👀<br/>
+            Every spin gives you at least one coin, win or lose.<br/><br/>
+            Long win <i>and</i> loss streaks are rewarded with bonus packs, so keep spinning!<br/><br/>
+            <i>During happy hours, the cooldown of this command is reduced, and more secrets await. See
+                <code>-forecast</code>.</i>
+        </td>
+        <td><code>-wof</code></td>
+    </tr>
+    <tr>
+        <td><code>-daily</code></td>
+        <td>
+            Open your daily pack: a bunch of spins at once, plus a pile of coins.<br/>
+            Subscribers and VIPs get more coins from their packs. Following the channel helps too!<br/><br/>
+            A new daily pack is available every day. If you have extra packs, <code>-daily</code> opens them too:
+            they have the same spins, but half the coins of a daily pack.
+        </td>
+        <td><code>-daily</code></td>
+    </tr>
+    <tr>
+        <td><code>-balance<br/>-coins</code></td>
+        <td>
+            Show your coin balance and your active jokers, with how many spins they have left.<br/><br/>
+            Optional parameter: <code>[@user]</code>
+        </td>
+        <td>
+            <code>-balance</code><br/>
+            <code>-coins @user</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-shop</code></td>
+        <td>
+            Buy a joker with your coins. See the <a href="#shop">shop</a> section below.
+        </td>
+        <td>
+            <code>-shop</code><br/>
+            <code>-shop blessing</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-stats</code></td>
+        <td>
+            Show Wheel of Fortune stats: spins, hits of each kind, streaks, and more.<br/><br/>
+            Optional parameter: <code>[@user]</code>, or <code>global</code> for everyone's stats combined.
+        </td>
+        <td>
+            <code>-stats</code><br/>
+            <code>-stats @user</code><br/>
+            <code>-stats global</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-packs</code></td>
+        <td>
+            Show pack stats: how many packs were opened and how good they were, whether today's daily pack was
+            opened, and how many extra packs are waiting.<br/><br/>
+            Optional parameter: <code>[@user]</code> or <code>global</code>.
+        </td>
+        <td>
+            <code>-packs</code><br/>
+            <code>-packs @user</code><br/>
+            <code>-packs global</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-history</code></td>
+        <td>
+            Show the latest spins and packs.<br/><br/>
+            Optional parameter: <code>[@user]</code> or <code>global</code>.
+        </td>
+        <td>
+            <code>-history</code><br/>
+            <code>-history @user</code><br/>
+            <code>-history global</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-rank</code></td>
+        <td>
+            Show your position on each leaderboard.<br/><br/>
+            Optional parameter: <code>[@user]</code>
+        </td>
+        <td>
+            <code>-rank</code><br/>
+            <code>-rank @user</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-lb<br/>-leaderboard<br/>-leaderboards</code></td>
+        <td>
+            Show the leaderboards: most spins, most packs, most rare hits, and best/worst streaks.<br/><br/>
+            <i>Not available while the stream is live.</i>
+        </td>
+        <td><code>-lb</code></td>
+    </tr>
+    <tr>
+        <td><code>-forecast</code></td>
+        <td>
+            Get a hint of when the next happy hour is coming.<br/><br/>
+            During happy hours, <code>-wof</code> has a shorter cooldown, and other secrets await...
+        </td>
+        <td><code>-forecast</code></td>
+    </tr>
+    <tr>
+        <td><code>-remind</code></td>
+        <td>
+            Choose when <code>-wof</code> reminds you that you have packs to open:
+            <ul>
+                <li><code>all</code>: (default) whenever you have any pack available, including extra packs.</li>
+                <li><code>daily</code>: only when your daily pack is available.</li>
+                <li><code>none</code>: never.</li>
+            </ul>
+        </td>
+        <td>
+            <code>-remind all</code><br/>
+            <code>-remind daily</code><br/>
+            <code>-remind none</code>
+        </td>
+    </tr>
+</table>
+
+<h3 id="shop">Shop</h3>
+<p>
+    Spend the coins you earn from <code>-wof</code> and <code>-daily</code> on jokers! Use
+    <code>-shop &lt;joker&gt;</code> with one of the joker names below.
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>Joker</th>
+        <th>Name</th>
+        <th>Effect</th>
+        <th>Cost</th>
+        <th>Lasts</th>
+    </tr>
+    <tr>
+        <td class="joker-emote">🎲</td>
+        <td>Oops! All 6s</td>
+        <td><code>oops</code></td>
+        <td>Loaded dice! Fewer nopes, more hits. Great for chasing win streak bonus packs.</td>
+        <td>200 coins</td>
+        <td>24 spins</td>
+    </tr>
+    <tr>
+        <td class="joker-emote">🍀</td>
+        <td>Celeste's Blessing</td>
+        <td><code>blessing</code></td>
+        <td>Celeste is watching over you. Rare hits are twice as likely.</td>
+        <td>450 coins</td>
+        <td>15 spins</td>
+    </tr>
+    <tr>
+        <td class="joker-emote">💀</td>
+        <td>Plonknondorf's Curse</td>
+        <td><code>curse</code></td>
+        <td>Cursed! More nopes, fewer hits. Why would you buy this?</td>
+        <td>80 coins</td>
+        <td>24 spins</td>
+    </tr>
+    <tr>
+        <td class="joker-emote">🪙</td>
+        <td>Midas Touch</td>
+        <td><code>midas</code></td>
+        <td>Everything you touch turns to gold. Your spins give twice the coins.</td>
+        <td>150 coins</td>
+        <td>30 spins</td>
+    </tr>
+</table>
+<ul>
+    <li>You can only buy one joker per command.</li>
+    <li>You can't buy a joker you already have active, wait for it to wear off first.</li>
+    <li>Different jokers can be active at the same time, and their effects add up.</li>
+    <li>Jokers wear off after a number of spins. Both <code>-wof</code> spins and each spin of a
+        <code>-daily</code> pack count.
+    </li>
+    <li>Use <code>-balance</code> to see your active jokers and how many spins they have left.</li>
+    <li>Spins with a joker count towards streak bonus packs like any other spin, so jokers that change your odds
+        make streaks easier (or harder) to reach. Pack spins never count towards streaks.
+    </li>
+</ul>
+
+<h3>Other commands</h3>
+<table>
+    <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Examples</th>
+    </tr>
+    <tr>
+        <td><code>-help<br/>-commands</code></td>
+        <td>List all commands, with a link to this page.</td>
+        <td><code>-help</code></td>
+    </tr>
+    <tr>
+        <td><code>-ping</code></td>
+        <td>Pings the bot, and shows its version and uptime.</td>
+        <td><code>-ping</code></td>
+    </tr>
+    <tr>
+        <td><code>-cf</code></td>
+        <td>
+            Flip a coin. Heads or tails?<br/><br/>
+            Optional parameter:<br/>
+            <code>-stats</code> shows your coin flip stats. Use <code>-stats:user</code> for someone else's, or
+            <code>-stats:global</code> for everyone's.
+        </td>
+        <td>
+            <code>-cf</code><br/>
+            <code>-cf -stats</code><br/>
+            <code>-cf -stats:user</code><br/>
+            <code>-cf -stats:global</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-rand</code></td>
+        <td>Roll a random number between <code>min</code> and <code>max</code> (both included).</td>
+        <td><code>-rand 1 100</code></td>
+    </tr>
+    <tr>
+        <td><code>-emote</code></td>
+        <td>
+            Post a random emote from the channel.<br/><br/>
+            Optional parameters: <code>-7tv</code>, <code>-bttv</code>, <code>-ffz</code> to pick from these
+            providers.
+        </td>
+        <td>
+            <code>-emote</code><br/>
+            <code>-emote -7tv</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>-ra</code></td>
+        <td>Show the recently added 7TV emotes of the channel.</td>
+        <td><code>-ra</code></td>
+    </tr>
+    <tr>
+        <td><code>-emotes</code></td>
+        <td>
+            List the channel's emotes matching a name filter.<br/><br/>
+            Optional parameters:
+            <ul>
+                <li><code>-author:&lt;name&gt;</code> to filter by emote author.</li>
+                <li><code>-all</code> to list every emote.</li>
+                <li><code>-cs</code> for a case-sensitive name filter.</li>
+                <li><code>-7tv</code>, <code>-bttv</code>, <code>-ffz</code> to pick from these providers.</li>
+            </ul>
+            <i>Only available to moderators.</i>
+        </td>
+        <td>
+            <code>-emotes cat</code><br/>
+            <code>-emotes -author:user</code><br/>
+            <code>-emotes -all -7tv</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code>-alright<br/>-catboy<br/>-luna<br/>-ome<br/>-otag<br/>-pickle<br/>-zero</code>
+        </td>
+        <td>Post a bunch of silly emotes. Try them out!</td>
+        <td><code>-pickle</code></td>
+    </tr>
+    <tr>
+        <td><code>-trampleme</code></td>
+        <td>Get trampled. You asked for it.</td>
+        <td><code>-trampleme</code></td>
+    </tr>
+    <tr>
+        <td><code>-linux</code></td>
+        <td>I'd just like to interject for a moment.</td>
+        <td><code>-linux</code></td>
+    </tr>
+</table>
+<p>
+    Something you would like to see? Let me know in chat at
+    <b><a href="https://twitch.tv/LeastSussyImposter" target="_blank"
+          rel="noopener noreferrer">LeastSussyImposter</a></b> or just send me a whisper!
+</p>
+<br/>
+<hr/>
+
+<footer>
+    <p><a href="../">Main page</a></p>
+    <p><a href="https://github.com/LeastSussyImposter/lsi.lol">Website source code</a></p>
+</footer>
+</body>
+</html>
