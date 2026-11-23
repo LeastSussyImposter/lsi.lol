@@ -73,11 +73,12 @@
     <tr>
         <td><code>-shop</code></td>
         <td>
-            Buy a joker with your coins. See the <a href="#shop">shop</a> section below.
+            Buy one or more jokers with your coins. See the <a href="#shop">shop</a> section below.
         </td>
         <td>
             <code>-shop</code><br/>
-            <code>-shop blessing</code>
+            <code>-shop blessing</code><br/>
+            <code>-shop oops blessing</code>
         </td>
     </tr>
     <tr>
@@ -165,7 +166,8 @@
 <h3 id="shop">Shop</h3>
 <p>
     Spend the coins you earn from <code>-wof</code> and <code>-daily</code> on jokers! Use
-    <code>-shop &lt;joker&gt;</code> with one of the joker names below.
+    <code>-shop &lt;joker&gt; [joker...]</code> with one or more of the joker names below, separated by spaces.
+    If you can't buy all of them (not enough coins, or one is still active), none are bought.
 </p>
 <table>
     <tr>
@@ -210,7 +212,6 @@
     </tr>
 </table>
 <ul>
-    <li>You can only buy one joker per command.</li>
     <li>You can't buy a joker you already have active, wait for it to wear off first.</li>
     <li>Different jokers can be active at the same time, and their effects add up.</li>
     <li>Jokers wear off after a number of spins. Both <code>-wof</code> spins and each spin of a
