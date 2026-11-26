@@ -63,7 +63,8 @@
         <td><code>-balance<br/>-coins</code></td>
         <td>
             Show your coin balance and your active jokers, with how many spins they have left.<br/><br/>
-            Optional parameter: <code>[@user]</code>, or <code>global</code> for everyone's coins combined.
+            Optional parameter: <code>[@user]</code>, or <code>global</code> for everyone's coins combined.<br/><br/>
+            For more details, use <code>-stats -coins</code>.
         </td>
         <td>
             <code>-balance</code><br/>
@@ -86,12 +87,16 @@
         <td><code>-stats</code></td>
         <td>
             Show Wheel of Fortune stats: spins, hits of each kind, streaks, and more.<br/><br/>
-            Optional parameter: <code>[@user]</code>, or <code>global</code> for everyone's stats combined.
+            Optional parameter: <code>[@user]</code>, or <code>global</code> for everyone's stats combined.<br/><br/>
+            Add <code>-coins</code> to see coin stats instead: balance, coins earned and spent, and jokers bought.
         </td>
         <td>
             <code>-stats</code><br/>
             <code>-stats @user</code><br/>
-            <code>-stats global</code>
+            <code>-stats global</code><br/>
+            <code>-stats -coins</code><br/>
+            <code>-stats -coins @user</code><br/>
+            <code>-stats -coins global</code>
         </td>
     </tr>
     <tr>
@@ -123,20 +128,27 @@
         <td><code>-rank</code></td>
         <td>
             Show your position on each leaderboard.<br/><br/>
-            Optional parameter: <code>[@user]</code>
+            Optional parameter: <code>[@user]</code><br/><br/>
+            Add <code>-coins</code> to see your position on the coin leaderboards.
         </td>
         <td>
             <code>-rank</code><br/>
-            <code>-rank @user</code>
+            <code>-rank @user</code><br/>
+            <code>-rank -coins</code><br/>
+            <code>-rank -coins @user</code>
         </td>
     </tr>
     <tr>
         <td><code>-lb<br/>-leaderboard<br/>-leaderboards</code></td>
         <td>
             Show the leaderboards: most spins, most packs, most rare hits, and best/worst streaks.<br/><br/>
+            Add <code>-coins</code> for the coin leaderboards: richest, most earned and most spent.<br/><br/>
             <i>Not available while the stream is live.</i>
         </td>
-        <td><code>-lb</code></td>
+        <td>
+            <code>-lb</code><br/>
+            <code>-lb -coins</code>
+        </td>
     </tr>
     <tr>
         <td><code>-forecast</code></td>
